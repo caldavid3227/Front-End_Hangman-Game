@@ -1,71 +1,59 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Hangman</title>
-	<meta charset="utf-8">
-	<!-- JS file (relative path) -->
-	<script type="text/javascript" src="assets\javascript\game.js"></script>
-	<!-- css reset (relative path) -->
-	<link rel="stylesheet" type="text/css" href="assets\css\reset.css">
-	<!-- css styling (relative path) -->
-	<link rel="stylesheet" type="text/css" href="assets\css\style.css">
-	
+    <title>Hangman</title>
+    <meta charset="utf-8">
+    <!-- JS file (relative path) -->
+    <script type="text/javascript" src="assets\javascript\game.js"></script>
+    <!-- css reset (relative path) -->
+    <link rel="stylesheet" type="text/css" href="assets\css\reset.css">
+    <!-- css styling (relative path) -->
+    <link rel="stylesheet" type="text/css" href="assets\css\style.css">
 </head>
 
 <body>
-
-	
-	<!-- stack images on webpage -->
-	
-		<div id="container">
-			
-	
-
-			<div id="header">
-
-				<img alt="Stargate_backdrop" id="stargate" src="http://www.giantfreakinrobot.com/wp-content/uploads/2012/08/stargate.jpg">
-
-				<p> You have <span id="lives">4</span> lives left <br>
-
-				There are <span id="numLetters">0</span> letters in this word
-
-					<h1 class="underscore">_ _ _ _</h1>
-
-				</p>
-			
-			<div id="letters">
-				<a id="a">A</a>
-				<a id="b">B</a>
-				<a id="c">C</a>
-				<a id="d">D</a>
-				<a id="e">E</a>
-				<a id="f">F</a>
-				<a id="g">G</a>
-				<a id="h">H</a>
-				<a id="i">I</a>
-				<a id="j">J</a>
-				<a id="k">K</a>
-				<a id="l">L</a>
-				<a id="m">M</a>
-				<a id="n">N</a>
-				<a id="o">O</a>
-				<a id="p">P</a>
-				<a id="q">Q</a>
-				<a id="r">R</a>
-				<a id="s">S</a>
-				<a id="t">T</a>
-				<a id="u">U</a>
-				<a id="v">V</a>
-				<a id="w">W</a>
-				<a id="x">X</a>
-				<a id="y">Y</a>
-				<a id="z">Z</a>
-				<a id="'">'</a>
-				
-			</div>
-			</div>
-
-		
-
+    <!-- stack images on webpage -->
+    <div id="container">
+        <div id="header">
+            <img alt="Stargate_backdrop" id="stargate" src="http://www.giantfreakinrobot.com/wp-content/uploads/2012/08/stargate.jpg">
+            <p> You have <span id="lives"></span> lives left
+                
+                <h1 id="underscore"></h1>
+            </p>
+            <div id="letters">
+                <a class="letter-btn" data-letter="a">A</a>
+                <a class="letter-btn" data-letter="b">B</a>
+                <a class="letter-btn" data-letter="c">C</a>
+                <a class="letter-btn" data-letter="d">D</a>
+                <a class="letter-btn" data-letter="e">E</a>
+                <a class="letter-btn" data-letter="f">F</a>
+                <a class="letter-btn" data-letter="g">G</a>
+                <a class="letter-btn" data-letter="h">H</a>
+                <a class="letter-btn" data-letter="i">I</a>
+                <a class="letter-btn" data-letter="j">J</a>
+                <a class="letter-btn" data-letter="k">K</a>
+                <a class="letter-btn" data-letter="l">L</a>
+                <a class="letter-btn" data-letter="m">M</a>
+                <a class="letter-btn" data-letter="n">N</a>
+                <a class="letter-btn" data-letter="o">O</a>
+                <a class="letter-btn" data-letter="p">P</a>
+                <a class="letter-btn" data-letter="q">Q</a>
+                <a class="letter-btn" data-letter="r">R</a>
+                <a class="letter-btn" data-letter="s">S</a>
+                <a class="letter-btn" data-letter="t">T</a>
+                <a class="letter-btn" data-letter="u">U</a>
+                <a class="letter-btn" data-letter="v">V</a>
+                <a class="letter-btn" data-letter="w">W</a>
+                <a class="letter-btn" data-letter="x">X</a>
+                <a class="letter-btn" data-letter="y">Y</a>
+                <a class="letter-btn" data-letter="z">Z</a>
+                <a class="letter-btn" data-letter="'">'</a>
+            </div>
+            <div id="wrongGuess">
+                <br><h5>Wrong Letters</h5>
+            </div>
+        </div>
 </body>
+
 </html>

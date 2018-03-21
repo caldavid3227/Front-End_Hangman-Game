@@ -1,55 +1,126 @@
-// The words that will be guessed
-var words = ["Stargate", "Lightsaber", "StarTrek", "Enterprise", "Voyager", "Sith", "Jedi", "Atlantis", "Jaffa", "Goa'uld", "Hyperspace", "Clone", "Skywalker", "Hoth", "Phaser", "Borg",]
-// choose ranodm word
-var randNum = Math.floor(Math.random() * words.length);
+window.onload = function() {
 
-var choosenWord = words[randNum];
+    const words = ["stargate", "lightsaber", "startrek", "enterprise", "voyager", "sith", "jedi", "atlantis", "jaffa", "goa'uld", "hyperspace", "clone", "skywalker", "hoth", "phaser", "borg"]
+    // choose ranodm word
 
-var rightWord = [];
+    var chosenWord = words[Math.floor(Math.random() * words.length)];
 
-var wrongWord = [];
+    var answerWord = chosenWord.split('');
 
-var underScore = [];
-
-var docUnderScore = document.getElementsByClassName('underscore');
-var docRightGuess = document.getElementsByClassName('RightGuess');
-var docWrongGuess = document.getElementsByClassName('WrongGuess');
+    var letterArr = [];
 
 
+    console.log(answerWord)
 
-console.log(choosenWord);
+    var lives = 15;
 
-var generateUnderscore = () => {
-	for (var i = 0; i < choosenWord.length; i++) {
-		underScore.push ('_');
-	}
-	return underScore;
-}
+    function displayLives() {
 
-console.log(generateUnderscore());
+        document.getElementById('lives').innerHTML = lives;
 
-document.addEventListener('keypress', (event) => {
-	var keycode = event.keyCode;
-	var keyword = String.fromCharCode(keycode);
-	if(choosenWord.indexOf(keyword) > -1) {
-		
-		rightWord.push(keyword);
-		
-			underScore[choosenWord.indexOf(keyword)] = keyword;
-			docUnderScore[0].innerHTML = underScore.join(' ');
-			
+    }
 
-			if(underScore.join('') == choosenWord) {
-				alert('You Win');
-				}
-			}
+    var letters = [];
 
-		else{
-			wrongWord.push(keyword);
-			console.log(wrongWord);
-			}
-});
+    const underScore = [];
 
 
+    console.log(chosenWord);
 
-generate.innerHTML[0] = generateUnderscore().join(' ');
+    var generateUnderscore = () => {
+        for (let i = 0; i < chosenWord.length; i++) {
+            underScore.push('_');
+
+
+        }
+        return underScore;
+    };
+
+    function displayUnderscore() {
+
+        const text = "";
+
+        underScore.join('text');
+
+        document.getElementById('underscore').innerHTML = underScore;
+    };
+
+    generateUnderscore();
+    displayUnderscore();
+
+    console.log(underScore);
+
+    const buttons = document.querySelectorAll('.letter-btn');
+
+    for (let i = 0; i < buttons.length; i++) {
+
+
+        buttons[i].addEventListener('click', (event) => {
+            console.log(buttons[i]);
+
+            const letterValue = buttons[i].dataset.letter
+
+            console.log(buttons[i].dataset.letter);
+
+
+            if (chosenWord.indexOf(letterValue) > -1) {
+
+                letterArr.push(letterValue);
+
+                console.log(letterArr);
+
+//                 function arrayFindReplace(array, findValue, replaceValue){
+//     while(chosenWord.indexOf(findValue) !== -1){
+//         let index = chosenWord.indexOf(findValue);
+//         [index] = replaceValue;
+//     }
+// }
+
+
+            // for (var i = 0; i < chosenWord.length; i++) {
+            //     chosenWord[i] = letterValue
+            // }
+
+
+
+
+
+            } else {
+
+                --lives;
+
+                var node = document.createElement("li");
+
+                var textNode = document.createTextNode(letterValue);
+
+                node.appendChild(textNode)
+
+                document.getElementById('wrongGuess').appendChild(node);
+
+                console.log(lives);
+            }
+
+
+            displayLives();
+
+            if (lives === 0) {
+
+                alert('You lose!')
+
+                window.location.reload(false);
+
+            }
+
+
+            if (answerWord.length === letterArr.length) {
+
+                alert('You win!');
+
+                window.location.reload(false);
+            }
+
+        });
+
+
+    }
+};
