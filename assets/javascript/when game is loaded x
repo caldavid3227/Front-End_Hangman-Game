@@ -1,0 +1,19 @@
+when game is loaded x
+	render word out of array /
+	place underscore per letter in word x
+	set lives to 15 x
+	set wrong guesses to null x
+	set right words to null x
+ 
+add on click event listener x
+	when clicked 
+		if correct append letter to corosponding underscore o
+		if incorrect append letter to side box x
+			decriment life by 1 x
+
+if all letters in word found alert correct x
+	move to next word in array x
+
+if lives = 0 
+	alert you lose x
+	restart game x

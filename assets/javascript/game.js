@@ -5,7 +5,7 @@ window.onload = function() {
 
     var chosenWord = words[Math.floor(Math.random() * words.length)];
 
-    var answerWord = chosenWord.split('');
+    var answerWord = chosenWord.split("");
 
     var letterArr = [];
 
@@ -64,27 +64,11 @@ window.onload = function() {
 
 
             if (chosenWord.indexOf(letterValue) > -1) {
-
                 letterArr.push(letterValue);
+                // underScore[i].push(letterArr);
 
                 console.log(letterArr);
-
-//                 function arrayFindReplace(array, findValue, replaceValue){
-//     while(chosenWord.indexOf(findValue) !== -1){
-//         let index = chosenWord.indexOf(findValue);
-//         [index] = replaceValue;
-//     }
-// }
-
-
-            // for (var i = 0; i < chosenWord.length; i++) {
-            //     chosenWord[i] = letterValue
-            // }
-
-
-
-
-
+                console.log(underScore);
             } else {
 
                 --lives;
