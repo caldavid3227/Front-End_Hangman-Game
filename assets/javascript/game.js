@@ -38,11 +38,7 @@ window.onload = function() {
 
     function displayUnderscore() {
 
-        const text = "";
-
-        underScore.join('text');
-
-        document.getElementById('underscore').innerHTML = underScore;
+        document.getElementById('underscore').innerHTML = underScore.join(' ');
     };
 
     generateUnderscore();
@@ -64,11 +60,16 @@ window.onload = function() {
 
 
             if (chosenWord.indexOf(letterValue) > -1) {
-                letterArr.push(letterValue);
-                // underScore[i].push(letterArr);
+                for(let i = 0; i < chosenWord.length; i++){
+                    
+                    if(chosenWord[i] === letterValue){
+                        underScore[i] = letterValue;
+                        letterArr.push(letterValue);
+                    };
+                };
 
-                console.log(letterArr);
-                console.log(underScore);
+                displayUnderscore();
+
             } else {
 
                 --lives;
